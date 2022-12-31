@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h2{
+    background-color: bisque;
+    text-align: left;
+    padding: 15px 30px 15px 75px;
+    color: #889D3C;
+}
+.content{
+    /* width: 100%;
+    height: 100%; */
+    border: 2px maroon solid;
+    background-color: antiquewhite;
+    outline-offset: 8px;
+    outline: 3px solid maroon;
+}
+.content h3{
+    text-align: center;
+    color: maroon;
+}
+a{
+    text-decoration: none;
+}
+td{
+    padding-bottom: 9px;
+}
+.copy-right{
+    background-image: url('images/footer.png');
+    margin-top: 30px;
+    height: 78px;
+    
+}
+.copy-right p{
+    color: aliceblue;
+    padding: 15px;
+    text-align: center;
+}
+.color{
+    margin-left:12px ;
+}

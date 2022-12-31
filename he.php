@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .item8{
+             
+                bottom: 0;
+                left: 0;
+                right: 0;
+                position: fixed;
+                z-index: 9999;
+            
+        }
+
+        .not, .fade {
+            padding: 5px;
+            text-align: center;
+            
+          }
+          
+          .fade {
+            padding: 50px;
+            display: none;
+          }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+        }
+        .item1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .item8 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .item2 {
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        .item3 {
+            grid-template-columns: repeat(4, 1fr);
+            display: grid;
+            grid-row: 3 / 4 ;
+            border: 2px maroon solid;
+            background-color: antiquewhite;
+            margin: 30px;
+            outline-offset: 15px;
+            outline: 5px solid maroon;
+        }
+
+        .container div {
+            font-size: 15px;
+            text-align: center;
+        }
+        li{
+            list-style: none;
+            display: flex;
+            padding: 5px 0;
+        }
+        li img{
+            font-size:14px;
+            padding-right: 22px;
+        }
+        .footer{
+            background-image: url('images/footer.png');
+            margin-top: 20px;
+            height: 78px;
+            
+        }
+        .footer .copy-right p{
+            color: aliceblue;
+            padding: 15px;
+            text-align: center;
+        }
+        .main {
+            grid-column: 1/-1;
+            grid-row: 2 / 3 ;
+            background-color: #A0B2A6;
+            }
+    </style>
+</head>
+<body id="b_c">
+<div class="container" width="100%" height="100%">
+    <div class="item1"><img src="images/banner.png" alt="" srcset="" width="100%" height="200px"></div>
+    <div class="main">
+        <div class="item item--main">main</div>
+      </div>
+    <div class="item2">
+        <h3 class="not"><img src="images/main_menu.png" alt=""></h3>
+        <div class="fade">
+            <li>
+                <img src="images/btn1.png" alt="">
+                <a href="login.php"><p>Log in</p></a>
+            </li>
+
+            <li>
+                <img src="images/btn1.png" alt="">
+                <a href="form.php"><p>Regestration</p></a>
+            </li>
+
+            <li>
+                <img src="images/btn1.png" alt="">
+                <a href="courses.php?userid=<?php echo $_SESSION['ID'];?>">Cources</a>
+            </li>
+           
+            <li>
+                <img src="images/btn1.png" alt="">
+                <a href=""><p>edit</p></a>
+            </li>
+
+            <li>
+                <img src="images/btn1.png" alt="">
+                <a href=""><p>Change Data</p></a>
+            </li>
+
+            <li>
+                <img src="images/btn1.png" alt="">
+                <a href=""><p>Delete Data</p></a>
+            </li>
+
+            <li>
+                <img src="images/btn1.png" alt="">
+                <a href=""><p>About Us</p></a>
+            </li>
+
+            <li>
+                <img src="images/btn1.png" alt="">
+                <a href=""><p>Contact Us</p></a>
+            </li>
+
+            <li>
+                <select id="c" onchange="mycolor()">
+                    <script>
+                        var color = ["Ivory", "Khaki", "Lavender", "LavenderBlush", "LawnGreen", "LemonChiffon", "LightBlue", "LightCoral", "LightCyan", "LightGoldenRodYellow", "LightGray", "LightGrey", "LightGreen", "LightPink", "LightSalmon", "LightSeaGreen", "LightSkyBlue", "LightSlateGray", "LightSlateGrey", "LightSteelBlue", "LightYellow", "Lime", "LimeGreen", "Linen", "Magenta", "Maroon", "MediumAquaMarine", "MediumBlue", "MediumOrchid", "MediumPurple", "MediumSeaGreen", "MediumSlateBlue", "MediumSpringGreen", "MediumTurquoise", "MediumVioletRed", "MidnightBlue", "MintCream", "MistyRose", "Moccasin", "NavajoWhite", "Navy", "OldLace", "Olive", "OliveDrab", "Orange", "OrangeRed", "Orchid", "PaleGoldenRod", "PaleGreen", "PaleTurquoise", "PaleVioletRed", "PapayaWhip", "PeachPuff", "Peru", "Pink", "Plum", "PowderBlue", "Purple", "RebeccaPurple", "Red", "RosyBrown", "RoyalBlue", "SaddleBrown", "Salmon", "SandyBrown", "SeaGreen", "SeaShell", "Sienna", "Silver", "SkyBlue", "SlateBlue", "SlateGray", "SlateGrey", "Snow", "SpringGreen", "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "White", "WhiteSmoke", "Yellow", "YellowGreen",];
+                        for (i = 0; i < color.length; i++) {
+                            document.write("<option value='" + color[i] + "'>" + color[i] + "</option>")
+                        }
+                    </script>
+            
+                </select>
+            </li>
+            <li>
+                <select id="t" onchange="textcolor()">
+                    <script>
+                        var color = ["Ivory", "Khaki", "Lavender", "LavenderBlush", "LawnGreen", "LemonChiffon", "LightBlue", "LightCoral", "LightCyan", "LightGoldenRodYellow", "LightGray", "LightGrey", "LightGreen", "LightPink", "LightSalmon", "LightSeaGreen", "LightSkyBlue", "LightSlateGray", "LightSlateGrey", "LightSteelBlue", "LightYellow", "Lime", "LimeGreen", "Linen", "Magenta", "Maroon", "MediumAquaMarine", "MediumBlue", "MediumOrchid", "MediumPurple", "MediumSeaGreen", "MediumSlateBlue", "MediumSpringGreen", "MediumTurquoise", "MediumVioletRed", "MidnightBlue", "MintCream", "MistyRose", "Moccasin", "NavajoWhite", "Navy", "OldLace", "Olive", "OliveDrab", "Orange", "OrangeRed", "Orchid", "PaleGoldenRod", "PaleGreen", "PaleTurquoise", "PaleVioletRed", "PapayaWhip", "PeachPuff", "Peru", "Pink", "Plum", "PowderBlue", "Purple", "RebeccaPurple", "Red", "RosyBrown", "RoyalBlue", "SaddleBrown", "Salmon", "SandyBrown", "SeaGreen", "SeaShell", "Sienna", "Silver", "SkyBlue", "SlateBlue", "SlateGray", "SlateGrey", "Snow", "SpringGreen", "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "White", "WhiteSmoke", "Yellow", "YellowGreen",];
+                        for (i = 0; i < color.length; i++) {
+                            document.write("<option value='" + color[i] + "'>" + color[i] + "</option>")
+                        }
+                    </script>
+                    
+            
+                </select> 
+            </li>
+        </div>
+    </div>
+    <div class="item3">
